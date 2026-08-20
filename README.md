@@ -34,31 +34,31 @@
 >context.terminal = ["tmux", "splitw", "-h"]
 >
 >def conn():
-    >if args.LOCAL:
-        >p = process([exe.path])
-        >gdb.attach(p)
-    >else:
-        >p = remote(HOST, PORT)
-    >return p
+>   if args.LOCAL:
+>       p = process([exe.path])
+>        gdb.attach(p)
+>    else:
+>        p = remote(HOST, PORT)
+>    return p
 >
 >def main():
-    ># === Alias === #
-    >p = conn()
-    >s = p.send
-    >sl = p.sendline
-    >sla = p.sendlineafter
-    >sa = p.sendafter
-    >r = p.recv
-    >ru = p.recvuntil
-    >rn = p.recvn
-    >rl = p.recvline
-    ># === Exploit === #
-    >log.info("happy pwn!")
-    ># =============== #
-    >p.interactive()
+>    # === Alias === #
+>    p = conn()
+>    s = p.send
+>    sl = p.sendline
+>    sla = p.sendlineafter
+>    sa = p.sendafter
+>    r = p.recv
+>    ru = p.recvuntil
+>    rn = p.recvn
+>    rl = p.recvline
+>    # === Exploit === #
+>    log.info("happy pwn!")
+>    # =============== #
+>    p.interactive()
 >
 >if __name__ == "__main__":
-    >main()
+>    main()
 >```
 
 ### > **macOS Execution Environment** <
@@ -77,8 +77,8 @@
 >
 >def conn():
 >    if args.LOCAL:
-        >sh = ssh(host=VM_HOST, port=VM_PORT, user="root", password="password")
-        >p = sh.process([f"{cwd}/pwn"], cwd=cwd)
+>        sh = ssh(host=VM_HOST, port=VM_PORT, user="root", password="password")
+>        p = sh.process([f"{cwd}/pwn"], cwd=cwd)
 >        gdb.attach(p)
 >    else:
 >        p = remote(HOST, PORT)
