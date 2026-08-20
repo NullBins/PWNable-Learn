@@ -103,12 +103,15 @@
 >if __name__ == "__main__":
 >    main()
 >```
+
+> ![IMG](./img/modify.png)
 > ![IMG](./img/basic_code.png)
 
 - *Run screen*
 ```vim
 python3 pwn_exploit_vm.py LOCAL
 ```
+> ![IMG](./img/run.png)
 > ![IMG](./img/basic.png)
 
 ## **CTF** 풀이 (*Solve*)
