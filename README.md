@@ -115,7 +115,26 @@ python3 pwn_exploit_vm.py LOCAL
 > ![IMG](./img/basic.png)
 
 ## **CTF** 풀이 (*Solve*)
+
 - ```Stack BOF```
+> 풀이 코드(solve.py) : [[pwn01](./pwn01/solve.py)]
+
+> ![IMG](./img/decomp01.png)
+
 > ![IMG](./img/pwn01.png)
+
 - ```Leak Stack Canary```
+
+> 풀이 코드(solve.py) : [[pwn02](./pwn02/solve.py)]
+
+> ![IMG](./img/decomp02_1.png)
+> ![IMG](./img/decomp02_2.png)
+
 > ![IMG](./img/pwn02.png)
+
+- ```GOT Overwrite```
+> 풀이 코드(solve.py) : [[pwn03](./pwn03/solve.py)]
+
+> ![IMG](./img/decomp03.png)
+
+> ![IMG](./img/pwn03.png)

@@ -1,6 +1,8 @@
 .DS_Store
 chall
+chall_patched
 flag.b64
 bof1
 llef/
 .venv
+pwn
