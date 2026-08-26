@@ -138,3 +138,17 @@ python3 pwn_exploit_vm.py LOCAL
 > ![IMG](./img/decomp03.png)
 
 > ![IMG](./img/pwn03.png)
+
+- ```FSB: Register Value Leak```
+> 풀이 코드(solve.py) : [[fsb_1_student](./pwn04/fsb_1_student/solve.py)]
+
+> ![IMG](./img/decomp04_1.png)
+
+> ![IMG](./img/pwn04_1.png)
+
+- ```FSB: Arbitrary Address Write```
+> 풀이 코드(solve.py) : [[fsb_2_student](./pwn04/fsb_2_student/solve.py)]
+
+> ![IMG](./img/decomp04_2.png)
+
+> ![IMG](./img/pwn04_2.png)
