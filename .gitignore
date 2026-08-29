@@ -5,4 +5,5 @@ flag.b64
 bof1
 llef/
 .venv
+libc.so.6
 pwn

