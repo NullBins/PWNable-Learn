@@ -178,3 +178,12 @@ python3 pwn_exploit_vm.py LOCAL
 > ![IMG](./img/pwn05_3.png)
 
 > ![IMG](./img/pwn05_4.png)
+
+- ```ROP: ROP Gadget Chaining```
+> 풀이 코드(solve.py) : [[pwn06](./pwn06/solve.py)]
+
+> ![IMG](./img/decomp06_1.png)
+> ![IMG](./img/decomp06_2.png)
+> ![IMG](./img/decomp06_3.png)
+
+> ![IMG](./img/pwn06.png)
