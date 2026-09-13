@@ -187,3 +187,22 @@ python3 pwn_exploit_vm.py LOCAL
 > ![IMG](./img/decomp06_3.png)
 
 > ![IMG](./img/pwn06.png)
+
+- ```ROP: Stack Pivot```
+> 풀이 코드(solve.py) : [[pivot_student](./pwn07/pivot_student/solve.py)]
+
+> ![IMG](./img/decomp07_1.png)
+> ![IMG](./img/decomp07_2.png)
+> ![IMG](./img/decomp07_3.png)
+
+> ![IMG](./img/pwn07_1.png)
+
+- ```ROP: FSB PIE ROP Gadget```
+> 풀이 코드(solve.py) : [[fsb_rop_student](./pwn07/fsb_rop_student/solve.py)]
+
+> ![IMG](./img/decomp07_4.png)
+> ![IMG](./img/decomp07_5.png)
+> ![IMG](./img/decomp07_6.png)
+> ![IMG](./img/decomp07_7.png)
+
+> ![IMG](./img/pwn07_2.png)
